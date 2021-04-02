@@ -1,0 +1,207 @@
+@import "base.scss";
+@import "_header.scss";
+@import "_footer.scss";
+
+.app {
+  &__main {
+    margin: 2rem 0;
+    min-height: calc(100vh - (67px * 2) - 2rem * 2);
+  }
+  &__intro {
+    margin-bottom: 2rem;
+    p {
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+      color: $color--text;
+    }
+  }
+  &__search {
+    form {
+      .button {
+        margin-left: -4px;
+      }
+    }
+  }
+  &__pagination {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      // overflow: hidden;
+      width: max-content;
+      margin: 0 auto;
+      // margin: 0 auto;
+      li {
+        margin-left: -1px;
+        &:first-child {
+          margin-left: 0;
+          a {
+            border-radius: 4px 0 0 4px;
+          }
+        }
+        &:last-child {
+          a {
+            border-radius: 0 4px 4px 0;
+          }
+        }
+        a {
+          font-weight: 500;
+          display: block;
+          padding: 12px 15px;
+          line-height: 1;
+          border: 1px solid #5900ff;
+          color: #5900ff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &.active,
+          &:hover {
+            background: $color--primary;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  &__table {
+    min-width: 600px;
+    th {
+      position: relative;
+      &.sort-column {
+        user-select: none;
+        transition: 0.3s;
+        &:hover {
+          background-color: transparentize($color--primary, 0.95);
+        }
+        &:focus {
+          transform: scale(0.95);
+        }
+      }
+      .order {
+        background: url("../icons/sort.svg") no-repeat center;
+        position: absolute;
+        right: 15px;
+        width: 26px;
+        background-size: 14px;
+        height: 26px;
+        top: 13px;
+        border-radius: 4px;
+        &:hover {
+          background-color: transparentize($color--primary, 0.85);
+        }
+      }
+    }
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: transparentize($color--primary, 0.95);
+        }
+      }
+    }
+  }
+  // Page content
+  &__wrapper {
+    padding: 2rem 0;
+  }
+  &__content {
+    p {
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+      color: $color--text;
+      text-align: justify;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      a {
+        color: $color--primary;
+        border-bottom: 1px solid $color--primary;
+        &:hover {
+          border-bottom-style: dashed;
+        }
+      }
+    }
+    ul {
+      margin: 1rem 0 1.5rem;
+      li {
+        padding-left: 1rem;
+        margin: 0.5rem;
+        color: $color--secondary;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        &::before {
+          content: "";
+          width: 25px;
+          height: 2px;
+          background: #22252a;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 0.5rem;
+          margin-top: 0.6rem;
+        }
+      }
+    }
+  }
+  &__aside {
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 2px 11px 2px #805fbf2b;
+    position: sticky;
+    top: 1rem;
+    &__heading {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    p {
+      color: lighten($color--text, 30%);
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+      a {
+        border-bottom: 1px solid currentColor;
+        &:hover {
+          color: $color--primary;
+          border-bottom-style: dashed;
+        }
+      }
+    }
+  }
+  // Dash
+  &__dash {
+    &__aside {
+      background: lighten($color--primary, 44%);
+      padding: 1rem;
+      border-radius: 4px;
+      &__metric {
+        margin-bottom: 1.5rem;
+        &__label {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 0.3rem;
+          &--sm {
+            display: inline-block;
+            font-size: 16px;
+            font-style: italic;
+            font-weight: 500;
+            color: $color--text;
+            margin-bottom: 0.3rem;
+            &:hover {
+              color: $color--primary;
+              border-bottom: 1px solid currentColor;
+            }
+          }
+        }
+        .form--control {
+          border-color: $color--secondary;
+        }
+        &__range {
+          padding: 0.5rem 0 1.3rem;
+        }
+      }
+    }
+  }
+}

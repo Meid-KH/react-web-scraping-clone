@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background: none;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+}
+svg {
+  max-width: 100%;
+  fill: currentColor;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  thead {
+    border-bottom: 2px solid #ececec;
+  }
+  th,
+  td {
+    padding: 15px 20px;
+    &:last-child {
+      text-align: right !important;
+    }
+  }
+}
+select[multiple] {
+  min-height: 150px;
+}

@@ -1,0 +1,146 @@
+@import "./partial/_variables";
+@import "./partial/bootstrap-grid.scss";
+@import "./partial/normalize.scss";
+@import "./partial/typography.scss";
+@import "./partial/_mixins";
+@import "./partial/_tables";
+
+/* VARS -End */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $font-main;
+  font-size: 16px;
+  font-weight: 400;
+  color: $color--secondary;
+  overflow-x: hidden;
+}
+
+// global classes
+.bg {
+  &--primary {
+    background-color: $color--primary;
+  }
+}
+.color {
+  &--primary {
+    color: $color--primary;
+  }
+  &--secondary {
+    color: $color--secondary;
+  }
+  &--white {
+    color: #fff;
+  }
+}
+
+// Helper classes
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.initial {
+  text-transform: initial;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.hard-full-width {
+  position: relative;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  left: 50%;
+  right: 50%;
+  // & > * {
+  // 	margin-left: auto;
+  // 	margin-right: auto;
+  // }
+}
+
+// Forms
+.form {
+  &--group {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+  &--control {
+    font-size: 14px;
+    font-family: inherit;
+    width: 100%;
+    padding: 12px 10px;
+    border: 2px solid $color--grey;
+    border-radius: 4px;
+    // &::placeholder {
+    //   // color: $grey;
+    //   font-style: italic;
+    // }
+  }
+}
+
+// Buttons
+.button {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  transition: 0.2s;
+  &--primary {
+    background: $color--primary;
+    color: #ffff;
+    &:hover {
+      background-color: transparentize($color--primary, 0.15);
+    }
+  }
+  &--icon {
+  }
+}
+
+// Headings
+.heading {
+  font-size: 40px;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  &--2 {
+    font-size: 30px;
+  }
+  &--3 {
+    font-size: 26px;
+  }
+  &--4 {
+    font-size: 24px;
+  }
+  &--5 {
+    font-size: 20px;
+    color: $color--primary;
+  }
+  &--6 {
+    font-size: 18px;
+    color: $color--primary;
+  }
+}
+
+// text
+.text-sm {
+  font-size: 12px;
+}
+.text-reg {
+  font-size: 14px;
+}
+.text-md {
+  font-size: 16px;
+}
+.text-lg {
+  font-size: 20px;
+}

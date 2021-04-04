@@ -6,6 +6,7 @@ import Articles from "./pages/articles";
 import Topics from "./pages/topics";
 import Dash from "./pages/dash";
 import SingleArticle from "./pages/singleArticle";
+import CreateTopic from "./pages/CreateTopic";
 
 function App() {
   return (
@@ -17,9 +18,11 @@ function App() {
         <Switch>
           {/* Dash page */}
           <Route extact path="/dash" render={() => <Dash />} />
+          {/* Topic - single page */}
+          <Route extact path="/topics/create" render={() => <CreateTopic />} />
           {/* Topics page */}
           <Route extact path="/topics" render={() => <Topics />} />
-          {/* Articles - single page */}
+          {/* Article - single page */}
           <Route
             extact
             path="/articles/:id"

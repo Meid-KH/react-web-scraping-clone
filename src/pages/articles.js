@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../Layout";
-import SortableTable from "../components/SortableTable";
+import ArticlesSortableTable from "../components/ArticlesSortableTable";
 
 function Articles() {
   return (
@@ -27,7 +27,7 @@ function Articles() {
                   className="form--control"
                   name="search"
                   type="search"
-                  placeholder="Search for an article..."
+                  placeholder="Type an article..."
                 />
                 <button className="button button--primary">Search</button>
               </div>
@@ -40,7 +40,7 @@ function Articles() {
         </div>
       </div>
 
-      <SortableTable />
+      <ArticlesSortableTable />
     </Layout>
   );
 }

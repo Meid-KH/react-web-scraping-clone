@@ -1,0 +1,45 @@
+@import "partial/_variables";
+
+.app {
+  &__dash {
+    &__aside {
+      background: lighten($color--primary, 44%);
+      padding: 1rem;
+      border-radius: 4px;
+      position: sticky;
+      top: 1rem;
+      border: 2px solid #5900ff;
+      &__metric {
+        &:not(:last-child) {
+          margin-bottom: 1.5rem;
+        }
+        &__label {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 0.3rem;
+          &--sm {
+            display: inline-block;
+            font-size: 16px;
+            font-style: italic;
+            font-weight: 500;
+            color: $color--text;
+            margin-bottom: 0.3rem;
+            &:hover {
+              color: $color--primary;
+              border-bottom: 1px solid currentColor;
+            }
+          }
+        }
+        .form--control {
+          border-color: $color--secondary;
+        }
+        &__range {
+          padding: 0.5rem 0 1.3rem;
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

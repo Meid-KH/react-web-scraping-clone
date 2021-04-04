@@ -1,21 +1,14 @@
 import React from "react";
+import DashGraph from "../components/DashGraph";
 import Layout from "../Layout";
 import RangeSlider from "../utils/RangeSlider";
+import "../styles/dash.scss";
 
 function Dash() {
   return (
     <Layout>
-      <div className="app__wrapper">
-        <div className="app__intro">
-          <h1 className="heading heading--1">Dash lorem ispum set amet</h1>
-          <p>
-            If several languages coalesce, the grammar of the resulting language
-            is more simple and regular than that of the individual languages.
-            The new common language will be more simple and regular than the
-            existing European languages
-          </p>
-        </div>
-        <section className="app__dash">
+      <div className="app__wrapper py-0">
+        <section className="app__dash my-n4">
           <div className="hard-full-width">
             <div className="container-fluid">
               <div className="row">
@@ -95,7 +88,11 @@ function Dash() {
                       <div className="app__dash__aside__metric__range">
                         <RangeSlider value={80} />
                       </div>
-                      <a className="app__dash__aside__metric__label--sm">
+                      <a
+                        href="socialmediaexaminer.com"
+                        target="_blank"
+                        className="app__dash__aside__metric__label--sm"
+                      >
                         toprankblog.com
                       </a>
                       <div className="app__dash__aside__metric__range">
@@ -111,10 +108,71 @@ function Dash() {
                       <div className="app__dash__aside__metric__range">
                         <RangeSlider value={45} />
                       </div>
+                      <a
+                        href="socialmediaexaminer.com"
+                        target="_blank"
+                        className="app__dash__aside__metric__label--sm"
+                      >
+                        socialmediaexaminer.com
+                      </a>
+                      <div className="app__dash__aside__metric__range">
+                        <RangeSlider value={45} />
+                      </div>
+                      <a
+                        href="socialmediaexaminer.com"
+                        target="_blank"
+                        className="app__dash__aside__metric__label--sm"
+                      >
+                        socialmediaexaminer.com
+                      </a>
+                      <div className="app__dash__aside__metric__range">
+                        <RangeSlider value={45} />
+                      </div>
+                      <a
+                        href="socialmediaexaminer.com"
+                        target="_blank"
+                        className="app__dash__aside__metric__label--sm"
+                      >
+                        socialmediaexaminer.com
+                      </a>
+                      <div className="app__dash__aside__metric__range">
+                        <RangeSlider value={45} />
+                      </div>
+                      <a
+                        href="socialmediaexaminer.com"
+                        target="_blank"
+                        className="app__dash__aside__metric__label--sm"
+                      >
+                        socialmediaexaminer.com
+                      </a>
+                      <div className="app__dash__aside__metric__range">
+                        <RangeSlider value={45} />
+                      </div>
                     </div>
                   </aside>
                 </div>
-                <div className="col-md-8 col-xl-9">cntnt</div>
+                <div className="col-md-8 col-xl-9 py-4">
+                  <div className="app__intro mb-4">
+                    <h1 className="heading heading--1">
+                      Dash lorem ispum set amet
+                    </h1>
+                    <p>
+                      If several languages coalesce, the grammar of the
+                      resulting language is more simple and regular than that of
+                      the individual languages. The new common language will be
+                      more simple and regular than the existing European
+                      languages
+                    </p>
+                  </div>
+                  <div className="app__graph__wrapper">
+                    <div className="py-3">
+                      <h2 className="heading heading--3">Chart</h2>
+                    </div>
+                    <DashGraph />
+                    {/* <DashGraph /> */}
+                    {/* <DashGraph /> */}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,0 +1,23 @@
+@import "_variables";
+.app {
+  &__graph {
+    &__wrapper {
+      position: sticky;
+      top: 0;
+    }
+    &__hint {
+      transition: 0.3s;
+      & > div {
+        // background: #1a86ff;
+        background: $color--primary;
+        color: #fff;
+        padding: 4px 6px;
+        font-size: 14px;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 1.5;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}

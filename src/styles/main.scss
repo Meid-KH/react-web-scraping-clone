@@ -34,7 +34,7 @@
       margin: 0 auto;
       // margin: 0 auto;
       li {
-        margin-left: -1px;
+        margin-left: -2px;
         &:first-child {
           margin-left: 0;
           a {
@@ -51,7 +51,7 @@
           display: block;
           padding: 12px 15px;
           line-height: 1;
-          border: 1px solid #5900ff;
+          border: 2px solid #5900ff;
           color: #5900ff;
           display: flex;
           align-items: center;
@@ -65,6 +65,69 @@
       }
     }
   }
+
+  .react-bs-table-pagination {
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+      & > [class*="col-"] {
+        max-width: inherit;
+        flex: unset;
+        &:first-child {
+          display: none !important;
+        }
+      }
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      // overflow: hidden;
+      width: max-content;
+      margin: 0 auto;
+      float: none;
+      // margin: 0 auto;
+      li {
+        margin-left: -2px;
+        &:first-child {
+          margin-left: 0;
+          a {
+            border-radius: 4px 0 0 4px;
+          }
+        }
+        &:last-child {
+          a {
+            border-radius: 0 4px 4px 0;
+          }
+        }
+        &.active,
+        &:hover {
+          a {
+            background: $color--primary;
+            color: #fff;
+          }
+        }
+        &:hover {
+          a {
+            background: lighten($color: $color--primary, $amount: 5%);
+          }
+        }
+        a {
+          font-weight: 500;
+          display: block;
+          padding: 12px 15px;
+          line-height: 1;
+          border: 2px solid #5900ff;
+          color: #5900ff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
   &__table {
     min-width: 600px;
     th {
@@ -79,15 +142,17 @@
           transform: scale(0.95);
         }
       }
+      [class*="fa-sort"],
       .order {
         background: url("../icons/sort.svg") no-repeat center;
-        position: absolute;
-        right: 15px;
-        width: 26px;
         background-size: 14px;
+        position: absolute;
+        width: 26px;
         height: 26px;
         top: 13px;
+        right: 15px;
         border-radius: 4px;
+        margin: 0 !important;
         &:hover {
           background-color: transparentize($color--primary, 0.85);
         }
@@ -165,10 +230,10 @@
   &__aside {
     border-radius: 6px;
     padding: 1rem;
-    box-shadow: 0 2px 11px 2px #805fbf2b;
+    border: 3px solid #805fbf21;
     position: sticky;
     top: 1rem;
-
+    background: #fbfaff;
     &__heading {
       font-size: 18px;
       font-weight: 600;
@@ -195,10 +260,12 @@
         li {
           display: block;
           font-size: 14px;
+          font-weight: 500;
           letter-spacing: 0.4px;
-          color: $color--primary;
-          background: #5900ff0d;
-          border: 1px solid currentColor;
+          line-height: 1.5;
+          color: $color--info;
+          background: transparentize($color--info, 0.9);
+          border: 2px solid currentColor;
           padding: 0.5rem 0.75rem;
           border-radius: 4px;
           margin: 0.5rem 0;

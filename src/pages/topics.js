@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Layout from "../Layout";
-import ArticlesSortableTable from "../components/ArticlesSortableTable";
+import TopicsSortableTable from "../components/TopicsSortableTable";
 
 function Topics() {
   return (
@@ -16,10 +17,10 @@ function Topics() {
             officia dolores sed cum, molestiae tempora nostrum
           </p>
         </div>
-        <div className="row">
-          <div className="col col-xl-8_ col-sm-10_">
-            <h2 className="heading heading--2">Search topics</h2>
-            <form className="mt-2">
+        <h2 className="heading heading--2 mt-2">Search topics</h2>
+        <div className="row justify-content-between">
+          <div className="col col-xl-10">
+            <form>
               <div className="flex-grow-1 d-flex ">
                 <input
                   className="form--control"
@@ -35,10 +36,15 @@ function Topics() {
               </label>
             </form>
           </div>
+          <div className="col-auto">
+            <Link to="/topics/create" className="button button--success">
+              Create new
+            </Link>
+          </div>
         </div>
       </div>
 
-      <ArticlesSortableTable />
+      <TopicsSortableTable />
     </Layout>
   );
 }

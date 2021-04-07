@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
+// import "../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
 
 const items = [
   {
@@ -48,6 +49,15 @@ const items = [
     labels: ["Wordpress", "Shopify", "WooCommerce"],
     // action: viewButton,
   },
+  {
+    id: 6,
+    date: "2020-09-29",
+    site: "google.fr",
+    title: "Uefr dolor Consec uror zet amet",
+    keywords: "Lorem, ipsum,t, amet, consectetur, adipisicing",
+    labels: ["Wordpress", "WooCommerce"],
+    // action: viewButton,
+  },
 ];
 
 // Action Column
@@ -63,7 +73,7 @@ const viewButton = (cell, row, rowIndex, formatExtraData) => {
 // Labels column
 const labelsColumn = (cell, row) => {
   const { labels } = row;
-
+  console.log(labels);
   const renderLabels = labels.map((label, i) => {
     return (
       <a
@@ -81,13 +91,47 @@ const labelsColumn = (cell, row) => {
   return <div className="app__table__labels">{labels && renderLabels}</div>;
 };
 
+// Edit/Save on blur
+const cellEditProp = {
+  mode: "click",
+  blurToSave: true,
+};
+// Total pagination
+const renderShowsTotal = (start, to, total) => {
+  return (
+    <p style={{ color: "blue" }}>
+      From {start} to {to}, totals is {total}&nbsp;&nbsp;(its a customize text)
+    </p>
+  );
+};
+// Options
+const options = {
+  page: 1, // which page you want to show as default
+  sizePerPage: 2, // which size per page you want to locate as default
+  prePage: "<<", // Previous page button text
+  nextPage: ">>", // Next page button text
+  firstPage: "First", // First page button text
+  lastPage: "Last", // Last page button text
+  prePageTitle: "Go to previous", // Previous page button title
+  nextPageTitle: "Go to next", // Next page button title
+  firstPageTitle: "Go to first", // First page button title
+  lastPageTitle: "Go to Last", // Last page button title
+  // paginationShowsTotal: renderShowsTotal(),
+};
+
 function ArticlesSortableTable() {
   return (
     <>
       <div className="table-responsive mb-4">
         <div className="app__table">
-          <BootstrapTable data={items} striped hover>
-            <TableHeaderColumn isKey dataField="date" dataSort>
+          <BootstrapTable
+            version="4"
+            data={items}
+            // cellEdit={cellEditProp}
+            pagination={true}
+            options={options}
+          >
+            <TableHeaderColumn isKey={true} dataField="date" dataSort>
               Date
             </TableHeaderColumn>
             <TableHeaderColumn dataField="site" dataSort>
@@ -107,13 +151,18 @@ function ArticlesSortableTable() {
             >
               Labels
             </TableHeaderColumn>
-            <TableHeaderColumn dataField="button" dataFormat={viewButton}>
+            <TableHeaderColumn
+              thStyle={{ textAlign: "center" }}
+              tdStyle={{ textAlign: "center" }}
+              dataField="button"
+              dataFormat={viewButton}
+            >
               Action
             </TableHeaderColumn>
           </BootstrapTable>
         </div>
       </div>
-      <div className="app__pagination mb-4">
+      {/* <div className="app__pagination mb-4">
         <ul>
           <li>
             <a href="#">{"<<"}</a>
@@ -125,28 +174,10 @@ function ArticlesSortableTable() {
             <a href="#">2</a>
           </li>
           <li>
-            <a href="#">3</a>
-          </li>
-          <li>
-            <a href="#">4</a>
-          </li>
-          <li>
-            <a href="#">5</a>
-          </li>
-          <li>
-            <a href="#">...</a>
-          </li>
-          <li>
-            <a href="#">422</a>
-          </li>
-          <li>
-            <a href="#">423</a>
-          </li>
-          <li>
             <a href="#">{">>"}</a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </>
   );
 }

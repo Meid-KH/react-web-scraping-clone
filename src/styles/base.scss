@@ -90,7 +90,7 @@ body {
     font-size: 14px;
     font-family: inherit;
     width: 100%;
-    padding: 12px 10px;
+    padding: 10px 10px;
     border: 2px solid $color--grey;
     border-radius: 4px;
     // &::placeholder {
@@ -111,7 +111,7 @@ body {
 .button {
   font-family: inherit;
   font-size: 16px;
-  padding: 10px 20px;
+  padding: 14px 20px;
   border-radius: 4px;
   display: inline-block;
   transition: 0.2s;
@@ -124,12 +124,36 @@ body {
     }
   }
   &--secondary {
+    color: $color--primary;
     background: #fff;
     border: 2px solid $color--primary;
-    color: $color--primary;
     &:hover {
       background-color: $color--primary;
       color: #fff;
+    }
+  }
+  &--danger {
+    color: #fff;
+    background: $color--danger;
+    border: 2px solid $color--danger;
+    &:hover {
+      background-color: darken($color--danger, 12%);
+    }
+  }
+  &--info {
+    color: #fff;
+    background: $color--info;
+    border: 2px solid $color--info;
+    &:hover {
+      background-color: darken($color--info, 12%);
+    }
+  }
+  &--success {
+    background: $color--success;
+    color: #fff;
+    border: 2px solid $color--success;
+    &:hover {
+      background-color: darken($color--success, 12%);
     }
   }
   // &--icon {

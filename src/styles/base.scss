@@ -159,6 +159,17 @@ body {
   // &--icon {
   // }
 }
+// Alerts
+.alert {
+  padding: 1.5rem 1rem;
+  font-size: 18px;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  &--danger {
+    color: #d0464c;
+    background: #ff666d2e;
+  }
+}
 
 // Headings
 .heading {

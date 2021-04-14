@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../Layout";
 import ArticlesSortableTable from "../components/ArticlesSortableTable";
 
@@ -31,10 +31,10 @@ function Articles() {
                 />
                 <button className="button button--primary">Search</button>
               </div>
-              <label className="d-block py-2 text-reg" htmlFor="search">
+              {/* <label className="d-block py-2 text-reg" htmlFor="search">
                 Displaying <strong>1-300</strong> in total of{" "}
                 <strong>126.662</strong>
-              </label>
+              </label> */}
             </form>
           </div>
         </div>

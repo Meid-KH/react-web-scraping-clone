@@ -33,6 +33,12 @@ function SingleArticle({ articleId }) {
 
   console.log("data ==> ", article);
 
+  return (
+    <Layout>
+      {isLoading ? <p>Loading...</p> : <ArticleTemplate data={article} />}
+    </Layout>
+  );
+
   const ArticleTemplate = ({ data }) => {
     const {
       id,
@@ -84,7 +90,7 @@ function SingleArticle({ articleId }) {
                 <>
                   <div className="app__aside__heading">URL link</div>
                   <p>
-                    <a href={site} target="_blank">
+                    <a href={site} target="_blank" rel="noreferrer">
                       {site}
                     </a>
                   </p>
@@ -96,12 +102,6 @@ function SingleArticle({ articleId }) {
       </section>
     );
   };
-
-  return (
-    <Layout>
-      {isLoading ? <p>Loading...</p> : <ArticleTemplate data={article} />}
-    </Layout>
-  );
 }
 
 export default SingleArticle;

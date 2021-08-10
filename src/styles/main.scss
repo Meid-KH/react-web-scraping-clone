@@ -3,6 +3,27 @@
 @import "_footer.scss";
 
 .app {
+  &__backButton {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    transition: .15s;
+    &:hover {
+      color: $color--primary;
+      gap: .55rem;
+    }
+    &:active {
+      .icon {
+        transform: scale(.96);
+      }
+    }
+    .icon {
+      width: 32px;
+      height: 32px;
+      color: $color--primary;
+      transition: .2s;
+    }
+  }
   &__main {
     margin: 2rem 0;
     min-height: calc(100vh - (67px * 2) - 2rem * 2);

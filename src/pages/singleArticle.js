@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BackButton from "../components/partial/BackButton";
 import Layout from "../Layout";
 const { REACT_APP_API_URL } = process.env;
 
@@ -33,12 +34,6 @@ function SingleArticle({ articleId }) {
 
   console.log("data ==> ", article);
 
-  return (
-    <Layout>
-      {isLoading ? <p>Loading...</p> : <ArticleTemplate data={article} />}
-    </Layout>
-  );
-
   const ArticleTemplate = ({ data }) => {
     const {
       id,
@@ -60,6 +55,7 @@ function SingleArticle({ articleId }) {
 
     return (
       <section className="app__wrapper">
+        <BackButton path="/articles" />
         <div className="row">
           <div className="col-xl-9 col-md-8">
             <div className="app__content">
@@ -79,9 +75,9 @@ function SingleArticle({ articleId }) {
                 <>
                   <div className="app__aside__heading">Labels</div>
                   <p>
-                    {labels.map((label) => {
-                      <span>{label}</span>;
-                    })}
+                    {labels.map((label, i) => (
+                      <span key={i}>{label}</span>
+                    ))}
                   </p>
                 </>
               )}
@@ -90,7 +86,7 @@ function SingleArticle({ articleId }) {
                 <>
                   <div className="app__aside__heading">URL link</div>
                   <p>
-                    <a href={site} target="_blank" rel="noreferrer">
+                    <a href={`http://${site}`} target="_blank" rel="noreferrer">
                       {site}
                     </a>
                   </p>
@@ -102,6 +98,12 @@ function SingleArticle({ articleId }) {
       </section>
     );
   };
+
+  return (
+    <Layout>
+      {isLoading ? <p>Loading...</p> : <ArticleTemplate data={article} />}
+    </Layout>
+  );
 }
 
 export default SingleArticle;

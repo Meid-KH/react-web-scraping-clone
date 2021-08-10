@@ -6,7 +6,7 @@ const getArticles = async () => {
     redirect: "follow",
   };
   const response = await fetch(
-    `${REACT_APP_API_URL}/articles/0/2`,
+    `${REACT_APP_API_URL}/articles/0/30`,
     requestOptions
   );
   const data = await response.json();

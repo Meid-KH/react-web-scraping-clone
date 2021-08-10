@@ -105,8 +105,47 @@ body {
       min-width: 200px;
     }
   }
+  &--loading {
+    position: relative;
+    filter: blur(2px);
+    pointer-events: none;
+    & + .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%) !important;
+      z-index: 99;
+      width: 60px;
+      height: 60px;
+    }
+  }
 }
+// Loading
+.blur-loading {
+  position: relative;
+      pointer-events: none;
 
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    backdrop-filter: blur(2px);
+    z-index: 9;
+  }
+  .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) !important;
+    z-index: 99;
+    width: 60px;
+    height: 60px;
+  }
+}
 // Buttons
 .button {
   font-family: inherit;
@@ -114,7 +153,10 @@ body {
   padding: 14px 20px;
   border-radius: 4px;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.1s;
+  &:active {
+    transform: scale(.96);
+  }
   &--primary {
     background: $color--primary;
     border: 2px solid $color--primary;
@@ -169,6 +211,16 @@ body {
     color: #d0464c;
     background: #ff666d2e;
   }
+  &--success {
+    color: #18ad20;
+    background: #00ff0d14;
+  }
+}
+.react-bs-table-no-data {
+  color: #f03a40;
+  background: #ff4a522e;
+  font-weight: 500;
+  text-align: center !important;
 }
 
 // Headings
@@ -216,4 +268,71 @@ body {
 }
 .text-600 {
   font-weight: 600;
+}
+
+// Loading spinner
+$spinnerSize: 40;
+svg.spinner {
+  width: $spinnerSize + px;
+  height: $spinnerSize + px;
+  x: 0px;
+  y: 0px;
+  circle {
+    fill: transparent;
+    stroke: #ff4545;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: (3.14 * $spinnerSize);
+    -webkit-transform-origin: (0.5px * $spinnerSize) (0.5px * $spinnerSize) 0;
+    -moz-transform-origin: (0.5px * $spinnerSize) (0.5px * $spinnerSize) 0;
+    -ms-transform-origin: (0.5px * $spinnerSize) (0.5px * $spinnerSize) 0;
+    -o-transform-origin: (0.5px * $spinnerSize) (0.5px * $spinnerSize) 0;
+    transform-origin: (0.5px * $spinnerSize) (0.5px * $spinnerSize) 0;
+    -webkit-animation: spinner 2s linear infinite;
+    -moz-animation: spinner 2s linear infinite;
+    -ms-animation: spinner 2s linear infinite;
+    -o-animation: spinner 2s linear infinite;
+    animation: spinner 2s linear infinite;
+  }
+}
+// Skeletons
+.skeleton {
+  width: 100%;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+  &__item {
+    background: #ebebeb;
+    border-radius: 3px;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    animation: linearBG .8s linear infinite;
+    &::before {
+      content: "";
+      position: absolute;
+    }
+  }
+}
+
+@keyframes linearBG {
+  0% {
+    background: #e0e0e0;
+  } 50% {
+    background: #f3f3f3ef;
+  } 100% {
+    background: #e0e0e0;
+  }  
+}
+@keyframes spinner {
+  0% {
+      transform: rotate(0deg);
+      stroke-dashoffset: (0.66 * $spinnerSize);
+  } 50% {
+      transform: rotate(720deg);
+      stroke-dashoffset: (3.14 * $spinnerSize);
+  } 100% {
+      transform: rotate(1080deg);
+      stroke-dashoffset: (0.66 * $spinnerSize);
+  }
 }
